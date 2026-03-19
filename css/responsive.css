@@ -2,11 +2,15 @@
    TABLET — up to 1024px
    ============================================= */
 @media (max-width: 1024px) {
-  nav {
+  /* Nav bar */
+  nav,
+  nav.scrolled {
     padding: 20px 32px;
+    background: #3b1f14;
+    box-shadow: none;
   }
 
-  /* Hide horizontal links, show hamburger */
+  /* Full-screen overlay menu */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -15,7 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--dark-brown);
+    background: #3b1f14;
     justify-content: center;
     align-items: center;
     gap: 40px;
@@ -26,7 +30,7 @@
   }
   .nav-links a {
     font-size: 20px;
-    color: var(--white);
+    color: var(--blue);
     letter-spacing: 2px;
   }
   .hamburger {
@@ -34,14 +38,12 @@
   }
   .hamburger.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
-    background: var(--white);
   }
   .hamburger.open span:nth-child(2) {
     opacity: 0;
   }
   .hamburger.open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
-    background: var(--white);
   }
   section {
     padding: 80px 32px 60px;
@@ -90,6 +92,22 @@
   /* Journal */
   .journal-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Prevent horizontal overflow */
+  section,
+  .logo-screen,
+  .hero {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .brands-list {
+    white-space: normal;
+    font-size: 15px;
   }
 
   /* Contact */
